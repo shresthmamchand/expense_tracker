@@ -1,0 +1,28 @@
+<app-sidebar></app-sidebar>
+<div class="main-content">
+  <header><h1>Dashboard</h1></header>
+
+  <div class="stats-row">
+    <div class="card"><h3>Total Spent</h3><p class="big-text red">${{totalSpent}}</p></div>
+    <div class="card"><h3>Spending Target</h3><p class="big-text">${{spendingTarget}}</p></div>
+    <div class="card"><h3>Savings Target</h3><p class="big-text green">${{savingsTarget}}</p></div>
+  </div>
+
+  <div class="table-container">
+    <h3>Recent Expenses</h3>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Category</th><th>Amount</th><th>Mode</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ex of expenses">
+          <td>{{ex.name}}</td>
+          <td><span class="tag">{{ex.category}}</span></td>
+          <td>${{ex.amount}}</td>
+          <td>{{ex.paymentMode}}</td>
+          <td><button (click)="delete(ex.id)" class="del">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

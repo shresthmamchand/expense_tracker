@@ -1,0 +1,60 @@
+<app-sidebar></app-sidebar>
+<div class="main-content">
+  <div class="container">
+    <header class="form-header">
+      <h2>Log New Expense</h2>
+      <p>Fill in the details below to track your spending.</p>
+    </header>
+
+    <div class="grid-layout">
+      <div class="form-card">
+        <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="input-box">
+              <label>Expense Name</label>
+              <input formControlName="name" placeholder="e.g. Weekly Grocery">
+            </div>
+            <div class="input-box">
+              <label>Amount ($)</label>
+              <input type="number" formControlName="amount" placeholder="0.00">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-box">
+              <label>Category</label>
+              <select formControlName="category">
+                <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+              </select>
+            </div>
+            <div class="input-box">
+              <label>Payment Mode</label>
+              <select formControlName="paymentMode">
+                <option value="Cash">Cash</option>
+                <option value="Card">Credit/Debit Card</option>
+                <option value="UPI">UPI / Digital Transfer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="cancel-btn" routerLink="/dashboard">Cancel</button>
+            <button type="submit" class="submit-btn" [disabled]="expenseForm.invalid">Add Transaction</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="side-card">
+        <h3>Create Category</h3>
+        <p>Add custom tags to organize your expenses.</p>
+        <div class="add-cat-box">
+          <input #newCatInput type="text" placeholder="e.g. Health">
+          <button (click)="addCategory(newCatInput.value); newCatInput.value=''">Add</button>
+        </div>
+        <div class="cat-list">
+          <span class="cat-pill" *ngFor="let cat of categories">{{cat}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

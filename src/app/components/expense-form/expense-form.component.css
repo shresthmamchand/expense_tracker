@@ -1,0 +1,42 @@
+.main-content { margin-left: 260px; padding: 40px; background: #f8fafc; min-height: 100vh; }
+.container { max-width: 1000px; margin: 0 auto; }
+.form-header { margin-bottom: 30px; }
+.form-header h2 { font-size: 1.8rem; color: #1e293b; margin-bottom: 5px; }
+.grid-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+
+.form-card, .side-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-row { display: flex; gap: 20px; margin-bottom: 20px; }
+.input-box { flex: 1; display: flex; flex-direction: column; }
+.input-box label { font-size: 0.875rem; font-weight: 600; color: #475569; margin-bottom: 8px; }
+.input-box input, .input-box select {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-actions { display: flex; justify-content: flex-end; gap: 15px; margin-top: 10px; }
+.cancel-btn { background: none; border: none; color: #64748b; font-weight: 600; cursor: pointer; }
+.submit-btn {
+  padding: 12px 25px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.submit-btn:disabled { background: #c7d2fe; cursor: not-allowed; }
+
+.add-cat-box { display: flex; gap: 10px; margin: 15px 0; }
+.add-cat-box input { flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px; }
+.add-cat-box button { background: #1e293b; color: white; border: none; padding: 0 15px; border-radius: 8px; cursor: pointer; }
+
+.cat-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.cat-pill { background: #f1f5f9; color: #475569; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; border: 1px solid #e2e8f0; }
