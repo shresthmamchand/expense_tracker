@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/expense_tracker": {},
+    "/expense_tracker/add-expense": {},
+    "/expense_tracker/dashboard": {},
+    "/expense_tracker/login": {}
+  }
+}
